@@ -19,3 +19,31 @@ promise.then((resolvedValue) => {
 })
 
 console.log(`codul se executa simultan cu cel de sus dar ecele de sus au un lag de 2 secunde`);
+
+
+// async await
+
+async function getUsers() {
+  let users = null;
+    setTimeout(()=> {
+        return [
+            {username: `username1`, password: `pass1`},
+            {username: `username2`, password: `pass2`}
+        ]
+    }, 3000)
+    return users;
+}
+
+const users = getUsers();
+
+users.then((users) => {
+    console.log(users);
+}).catch
+
+async function doSomethingWithUsers () {
+    let users = await getUsers();
+    console.log(`users din await: `, users);
+
+}
+
+doSomethingWithUsers;
