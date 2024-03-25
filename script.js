@@ -38,7 +38,7 @@ const users = getUsers();
 
 users.then((users) => {
     console.log(users);
-}).catch
+}).catch((e) => console.log((e)));
 
 async function doSomethingWithUsers () {
     let users = await getUsers();
@@ -46,4 +46,18 @@ async function doSomethingWithUsers () {
 
 }
 
-doSomethingWithUsers;
+doSomethingWithUsers();
+
+// try / catch
+
+try {
+    const labels = [];
+   // saySomething 
+    console.log(`first label is ${labels[0]}`);
+} catch (err) {
+    console.log(`an error has oquere`, err);
+} finally {
+    console.log(`finally has executed`);
+};
+
+console.log (`after try/catch`);
